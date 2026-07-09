@@ -63,3 +63,9 @@
 @media (max-width: 720px) {
   .nav-links { display: none; }
 }
+@media (max-width: 768px) {
+  .nav {
+    backdrop-filter: blur(6px);
+    background: rgba(255, 253, 251, 0.92);
+  }
+}

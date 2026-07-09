@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect ,useState , useRef} from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 export default function CursorGlow() {
@@ -6,8 +6,13 @@ export default function CursorGlow() {
   const y = useMotionValue(-200)
   const sx = useSpring(x, { stiffness: 120, damping: 22, mass: 0.5 })
   const sy = useSpring(y, { stiffness: 120, damping: 22, mass: 0.5 })
+  const [enabled, setEnabled] = useState(true)
 
   useEffect(() => {
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      setEnabled(false)
+      return
+    }
     function handleMove(e) {
       x.set(e.clientX)
       y.set(e.clientY)
@@ -15,7 +20,7 @@ export default function CursorGlow() {
     window.addEventListener('pointermove', handleMove)
     return () => window.removeEventListener('pointermove', handleMove)
   }, [x, y])
-
+  if (!enabled) return null
   return (
     <motion.div
       aria-hidden="true"

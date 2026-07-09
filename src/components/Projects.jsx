@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef ,useEffect } from 'react'
 import { projects, clientWork } from '../data/content.js'
 import ProjectCard from './ProjectCard.jsx'
 import ProjectModal from './ProjectModal.jsx'
@@ -11,6 +11,18 @@ export default function Projects() {
   const [selected, setSelected] = useState(null)
   const trackRef = useRef(null)
   const trackItems = [...allItems, ...allItems]
+  useEffect(() => {
+  const el = trackRef.current
+  if (!el) return
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      el.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused'
+    },
+    { threshold: 0.1 }
+  )
+  observer.observe(el)
+  return () => observer.disconnect()
+}, [])
 
   function pause() {
     if (trackRef.current) trackRef.current.style.animationPlayState = 'paused'

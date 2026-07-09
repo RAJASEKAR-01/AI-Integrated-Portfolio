@@ -51,3 +51,8 @@
 @media (prefers-reduced-motion: reduce) {
   .blob { animation: none; }
 }
+@media (max-width: 768px) {
+  .gradient-blobs {
+    display: none;
+  }
+}
