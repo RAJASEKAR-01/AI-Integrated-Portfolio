@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { profile } from '../data/content.js'
 import Magnetic from './Magnetic.jsx'
 import './Hero.css'
-
+import ResumeButton from './ResumeButton.jsx'
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.06 } },
@@ -76,8 +76,13 @@ export default function Hero() {
           <Magnetic>
             <a className="btn btn-ghost" href="#contact">Get in touch</a>
           </Magnetic>
+          <Magnetic>
+             <ResumeButton />
+          </Magnetic>
         </motion.div>
+        
       </div>
+      
 
       <motion.div
         className="hero-scroll-cue"
