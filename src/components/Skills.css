@@ -1,0 +1,107 @@
+.marquee-wrap {
+  overflow: hidden;
+  background: var(--text);
+  padding: 18px 0;
+  margin-bottom: 90px;
+  transform: rotate(-1deg);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 34s linear infinite;
+}
+
+.marquee-item {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: #fff;
+  padding: 0 22px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.marquee-dot {
+  color: var(--gold);
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+.filetree {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.filetree-group {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px 28px;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.filetree-group:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -20px rgba(229, 57, 125, 0.3);
+}
+
+.filetree-dir {
+  font-family: var(--font-mono);
+  font-size: 0.94rem;
+  color: var(--coral-deep);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.filetree-icon { color: var(--orange); }
+
+.filetree-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filetree-items li {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  padding-left: 18px;
+  position: relative;
+}
+
+.filetree-items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 10px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gold);
+}
+
+@media (max-width: 880px) {
+  .filetree { grid-template-columns: 1fr; }
+}
+.filetree-dir {
+  background: none; border: none; cursor: pointer; width: 100%; text-align: left;
+  font-family: var(--font-mono); font-size: 0.92rem; color: var(--magenta);
+  margin-bottom: 14px; display: flex; align-items: center; gap: 8px; padding: 0;
+}
+.filetree-evidence {
+  display: block; font-size: 0.8rem; color: var(--text-dim); margin-top: 4px; font-style: italic;
+}

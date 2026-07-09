@@ -1,0 +1,123 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+@media (max-width: 880px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projects-carousel {
+  position: relative;
+  padding: 0 24px;
+}
+
+.projects-track {
+  display: flex;
+  gap: 26px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 0 20px;
+  scrollbar-width: none;
+}
+
+.projects-track::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-item {
+  flex: 0 0 auto;
+  width: min(420px, 85vw);
+  scroll-snap-align: start;
+}
+
+.projects-nav {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: #fff;
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 24px -8px rgba(36,16,33,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.projects-nav:hover:not(:disabled) {
+  border-color: var(--magenta);
+  color: var(--magenta);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.projects-nav:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.projects-nav-left { left: -4px; }
+.projects-nav-right { right: -4px; }
+
+@media (max-width: 720px) {
+  .projects-nav { display: none; }
+  .projects-carousel { padding: 0 18px; }
+}
+
+.projects-carousel {
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0 12px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+
+.projects-track {
+  display: flex;
+  gap: clamp(18px, 3vw, 26px);
+  width: max-content;
+  padding: 0 24px;
+  animation: projects-scroll 48s linear infinite;
+}
+
+.projects-paused {
+  animation-play-state: paused;
+}
+
+@keyframes projects-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-track { animation: none; }
+}
+
+.projects-item {
+  flex: 0 0 auto;
+  width: clamp(260px, 80vw, 380px);
+}
+
+@media (max-width: 640px) {
+  .projects-track {
+    animation-duration: 60s;
+  }
+}
+.projects-track {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  padding: 0 24px;
+  animation: projects-scroll 48s linear infinite;
+}
+.projects-paused {
+  animation-play-state: paused;
+}

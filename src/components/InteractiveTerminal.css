@@ -1,0 +1,30 @@
+.iterm {
+  background: var(--surface-tint);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: text;
+  width:90%;
+  margin:auto;
+}
+.iterm-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 16px; background: #fff; border-bottom: 1px solid var(--border);
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot-a { background: var(--coral); } .dot-b { background: var(--gold); } .dot-c { background: var(--magenta); }
+.iterm-title { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim); margin-left: 8px; }
+.iterm-body {
+  font-family: var(--font-mono); font-size: 0.86rem; padding: 20px;
+  min-height: 260px; max-height: 340px; overflow-y: auto;
+}
+.iterm-line { margin-bottom: 6px; white-space: pre-wrap; }
+.iterm-output { color: var(--text-muted); }
+.iterm-error { color: var(--coral); }
+.iterm-command { color: var(--text); }
+.prompt { color: var(--magenta); font-weight: 600; }
+.iterm-input-row { display: flex; gap: 8px; align-items: center; }
+.iterm-input-row input {
+  background: transparent; border: none; outline: none; flex: 1;
+  font-family: var(--font-mono); font-size: 0.86rem; color: var(--text);
+}

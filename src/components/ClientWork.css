@@ -1,0 +1,78 @@
+.cw-carousel {
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0 4px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.cw-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  padding: 0 24px;
+  animation: cw-scroll 28s linear infinite;
+}
+
+.cw-paused {
+  animation-play-state: paused;
+}
+
+@keyframes cw-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cw-track { animation: none; }
+}
+
+.clientwork-card {
+  background: var(--surface-tint);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.clientwork-image-wrap { overflow: hidden; }
+
+.clientwork-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.clientwork-card:hover .clientwork-image {
+  transform: scale(1.04);
+}
+
+.clientwork-body { padding: 24px; }
+
+.clientwork-name { font-size: 1.2rem; margin-bottom: 8px; }
+
+.clientwork-desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+}
+
+.clientwork-stack {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.clientwork-chip {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+}

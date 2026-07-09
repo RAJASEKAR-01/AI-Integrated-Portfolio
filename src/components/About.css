@@ -1,0 +1,53 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-body {
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  max-width: 560px;
+}
+
+.credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.credential-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 26px;
+  position: relative;
+  overflow: hidden;
+}
+
+.credential-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--coral), var(--gold));
+}
+
+.credential-label {
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  color: var(--coral-deep);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.credential-detail {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 880px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
