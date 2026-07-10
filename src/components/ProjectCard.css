@@ -76,12 +76,12 @@
 
 .stack-chip {
   font-family: var(--font-mono);
-  font-size: 0.76rem;
-  padding: 6px 12px;
+  font-size: 0.7rem;
+  padding: 4px 10px;
   border-radius: 20px;
-  background: #fff;
+  background: var(--chip-bg);
   border: 1px solid var(--border);
-  color: var(--text-muted);
+  color: var(--chip-text);
   font-weight: 500;
 }
 

@@ -30,7 +30,8 @@
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-
+   --chip-bg: #ffffff;
+  --chip-text: var(--text-dim);
   --container: 1140px;
 }
 [data-theme='dark'] {
@@ -49,6 +50,8 @@
   --gold: #ffc233;
   --coral: #ff7d4d;
   --plum: #d891c9;
+    --chip-bg: #3a2638;
+  --chip-text: #d9c3d4;
 }
 
 body {
