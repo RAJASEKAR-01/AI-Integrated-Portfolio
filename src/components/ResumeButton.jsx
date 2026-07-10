@@ -15,3 +15,5 @@ export default function ResumeButton({ className = 'btn btn-ghost' }) {
     </Magnetic>
   )
 }
+
+ 

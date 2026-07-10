@@ -165,6 +165,7 @@ export const timeline = [
 export const credentials = [
   { label: 'B.Sc Computer Science (Cyber Security)', detail: 'Dr. SNS Rajalakshmi College of Arts and Science — CGPA 8.1' },
   { label: 'TCS NQT', detail: 'Java score: 81.93%' },
+  { label: 'Junior Software Developer Training', detail: 'Naan Mudhalvan Vetri Nichayam, Government of Tamil Nadu — CADD Technologies, Coimbatore' },
 ]
 export const clientWork = [
   {
