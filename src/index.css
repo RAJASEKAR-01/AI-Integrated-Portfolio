@@ -33,6 +33,27 @@
 
   --container: 1140px;
 }
+[data-theme='dark'] {
+  --bg: #1a1016;
+  --surface: #241722;
+  --surface-tint: #2c1c2a;
+  --border: #3d2a3a;
+  --border-strong: #4d3548;
+
+  --text: #f7ede9;
+  --text-muted: #c3aebd;
+  --text-dim: #8c7386;
+
+  --magenta: #ff4d94;
+  --magenta-dim: #ff77ad;
+  --gold: #ffc233;
+  --coral: #ff7d4d;
+  --plum: #d891c9;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }

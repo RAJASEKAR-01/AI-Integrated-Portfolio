@@ -4,9 +4,9 @@
   left: 0;
   right: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
+ background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-soft);
 }
 
 .nav-inner {
@@ -65,7 +65,12 @@
 }
 @media (max-width: 768px) {
   .nav {
-    backdrop-filter: blur(6px);
-    background: rgba(255, 253, 251, 0.92);
+     backdrop-filter: blur(6px);
+    background: var(--nav-bg);
   }
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }

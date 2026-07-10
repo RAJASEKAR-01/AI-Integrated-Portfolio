@@ -1,6 +1,7 @@
 import { profile } from '../data/content.js'
 import Magnetic from './Magnetic.jsx'
 import './Nav.css'
+import ThemeToggle from './ThemeToggle.jsx'
 
 const links = [
   { href: '#about', label: 'About' },
@@ -17,16 +18,21 @@ export default function Nav() {
         <a href="#top" className="nav-logo">
           {profile.name}<span className="gradient-text">.</span>
         </a>
+
         <nav className="nav-links">
           {links.map((l) => (
             <a key={l.href} href={l.href}>{l.label}</a>
           ))}
         </nav>
-        <Magnetic strength={0.25}>
-          <a href={profile.github} target="_blank" rel="noreferrer" className="btn btn-ghost nav-cta">
-            GitHub ↗
-          </a>
-        </Magnetic>
+
+        <div className="nav-right">
+          <ThemeToggle />
+          <Magnetic strength={0.25}>
+            <a href={profile.github} target="_blank" rel="noreferrer" className="btn btn-ghost nav-cta">
+              GitHub ↗
+            </a>
+          </Magnetic>
+        </div>
       </div>
     </header>
   )

@@ -57,5 +57,11 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+  (function () {
+    const stored = localStorage.getItem('theme');
+    document.documentElement.setAttribute('data-theme', stored || 'light');
+  })();
+</script>
   </body>
 </html>
